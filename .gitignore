@@ -1,7 +1,7 @@
 # Credentials - DO NOT COMMIT
 .env.prod.db
 .env.prod
-.env.dev
+
 
 # Python
 __pycache__/
@@ -16,3 +16,6 @@ env/
 # Database
 *.db
 *.sqlite3
+
+# Uploads
+services/web/project/media/

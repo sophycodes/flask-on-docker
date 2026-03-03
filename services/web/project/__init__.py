@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -7,6 +7,7 @@ app.config.from_object("project.config.Config")
 db = SQLAlchemy(app)
 
 
+# Database model — it defines what a row in database table looks like, using Python instead of SQL.
 class User(db.Model):
     __tablename__ = "users"
 
@@ -21,3 +22,8 @@ class User(db.Model):
 @app.route("/")
 def hello_world():
     return jsonify(hello="world")
+
+
+@app.route("/static/<path:filename>")
+def staticfiles(filename):
+    return send_from_directory(app.config["STATIC_FOLDER"], filename)

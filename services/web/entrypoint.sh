@@ -1,4 +1,5 @@
 #!/bin/sh
+#makes Flask wait until Postgres database is ready before running web container
 
 if [ "$DATABASE" = "postgres" ]
 then
