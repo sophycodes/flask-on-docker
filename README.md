@@ -1,6 +1,4 @@
-# Flask on Docker
-
-[![CI](https://github.com/sophycodes/flask-on-docker/actions/workflows/tests.yml/badge.svg)](https://github.com/sophycodes/flask-on-docker/actions/workflows/tests.yml)
+# Flask on Docker [![CI](https://github.com/sophycodes/flask-on-docker/actions/workflows/tests.yml/badge.svg)](https://github.com/sophycodes/flask-on-docker/actions/workflows/tests.yml)
 
 ## Overview
 
