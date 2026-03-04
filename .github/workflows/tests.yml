@@ -1,0 +1,27 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build development Docker image
+        run: docker compose build
+
+      - name: Start containers
+        run: docker compose up -d
+
+      - name: Wait for containers to be ready
+        run: sleep 10
+
+      - name: Test hello world endpoint
+        run: |
+          response=$(curl -s http://localhost:5743/)
+          echo "$response"
+          echo "$response" | grep -q "world"
+
+      - name: Tear down
+        run: docker compose down -v
